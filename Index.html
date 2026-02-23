@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marriage Biodata</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Noto+Serif+Devanagari:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .font-devanagari {
+      font-family: 'Noto Serif Devanagari', serif;
+    }
+    
+    .biodata-page {
+      width: 210mm;
+      min-height: 297mm;
+      background: linear-gradient(135deg, #FDF8F0 0%, #F5EBD7 50%, #FDF8F0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mandala-pattern {
+      position: absolute;
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      opacity: 0.08;
+    }
+    
+    .corner-ornament {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      opacity: 0.3;
+    }
+    
+    .section-heading {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: linear-gradient(90deg, #800020, #B8860B, #800020);
+    }
+    
+    .photo-frame {
+      border: 3px solid #800020;
+      padding: 4px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(128, 0, 32, 0.15);
+    }
+    
+    .photo-inner {
+      border: 1px solid #D4AF37;
+    }
+    
+    .detail-row {
+      display: flex;
+      padding: 3px 0;
+      border-bottom: 1px dotted rgba(128, 0, 32, 0.15);
+    }
+    
+    .detail-label {
+      min-width: 110px;
+      font-weight: 500;
+    }
+    
+    .om-symbol {
+      font-size: 2rem;
+      background: linear-gradient(180deg, #800020, #B8860B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    @media print {
+      .biodata-page {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-gray-100 flex items-center justify-center p-4 overflow-auto">
+  <div class="biodata-page shadow-2xl relative" id="biodata"><!-- Maroon Border -->
+   <div class="absolute inset-3 border-2 border-[#800020] pointer-events-none"></div>
+   <div class="absolute inset-4 border border-[#D4AF37] pointer-events-none"></div><!-- Corner Ornaments -->
+   <svg class="corner-ornament top-5 left-5" viewbox="0 0 60 60"><path d="M0,0 Q30,0 30,30 Q30,0 60,0" fill="none" stroke="#800020" stroke-width="1" /> <path d="M0,0 Q0,30 30,30 Q0,30 0,60" fill="none" stroke="#800020" stroke-width="1" /> <circle cx="30" cy="30" r="3" fill="#D4AF37" />
+   </svg>
+   <svg class="corner-ornament top-5 right-5" viewbox="0 0 60 60" style="transform: scaleX(-1)"><path d="M0,0 Q30,0 30,30 Q30,0 60,0" fill="none" stroke="#800020" stroke-width="1" /> <path d="M0,0 Q0,30 30,30 Q0,30 0,60" fill="none" stroke="#800020" stroke-width="1" /> <circle cx="30" cy="30" r="3" fill="#D4AF37" />
+   </svg>
+   <svg class="corner-ornament bottom-5 left-5" viewbox="0 0 60 60" style="transform: scaleY(-1)"><path d="M0,0 Q30,0 30,30 Q30,0 60,0" fill="none" stroke="#800020" stroke-width="1" /> <path d="M0,0 Q0,30 30,30 Q0,30 0,60" fill="none" stroke="#800020" stroke-width="1" /> <circle cx="30" cy="30" r="3" fill="#D4AF37" />
+   </svg>
+   <svg class="corner-ornament bottom-5 right-5" viewbox="0 0 60 60" style="transform: scale(-1)"><path d="M0,0 Q30,0 30,30 Q30,0 60,0" fill="none" stroke="#800020" stroke-width="1" /> <path d="M0,0 Q0,30 30,30 Q0,30 0,60" fill="none" stroke="#800020" stroke-width="1" /> <circle cx="30" cy="30" r="3" fill="#D4AF37" />
+   </svg><!-- Mandala Pattern at Bottom -->
+   <svg class="mandala-pattern" viewbox="0 0 400 400"><defs>
+     <pattern id="mandalaPattern" x="0" y="0" width="50" height="50" patternunits="userSpaceOnUse">
+      <circle cx="25" cy="25" r="20" fill="none" stroke="#800020" stroke-width="0.5" />
+      <circle cx="25" cy="25" r="15" fill="none" stroke="#800020" stroke-width="0.5" />
+      <circle cx="25" cy="25" r="10" fill="none" stroke="#800020" stroke-width="0.5" />
+      <circle cx="25" cy="25" r="5" fill="none" stroke="#800020" stroke-width="0.5" />
+     </pattern>
+    </defs> <!-- Mandala circles --> <g transform="translate(200,200)">
+     <circle r="180" fill="none" stroke="#800020" stroke-width="1" />
+     <circle r="150" fill="none" stroke="#800020" stroke-width="0.5" />
+     <circle r="120" fill="none" stroke="#800020" stroke-width="1" />
+     <circle r="90" fill="none" stroke="#800020" stroke-width="0.5" />
+     <circle r="60" fill="none" stroke="#800020" stroke-width="1" />
+     <circle r="30" fill="none" stroke="#800020" stroke-width="0.5" /> <!-- Petals -->
+     <g id="petalGroup">
+      <path d="M0,-180 Q20,-120 0,-60 Q-20,-120 0,-180" fill="none" stroke="#800020" stroke-width="0.5" />
+     </g>
+     <use href="#petalGroup" transform="rotate(30)" />
+     <use href="#petalGroup" transform="rotate(60)" />
+     <use href="#petalGroup" transform="rotate(90)" />
+     <use href="#petalGroup" transform="rotate(120)" />
+     <use href="#petalGroup" transform="rotate(150)" />
+     <use href="#petalGroup" transform="rotate(180)" />
+     <use href="#petalGroup" transform="rotate(210)" />
+     <use href="#petalGroup" transform="rotate(240)" />
+     <use href="#petalGroup" transform="rotate(270)" />
+     <use href="#petalGroup" transform="rotate(300)" />
+     <use href="#petalGroup" transform="rotate(330)" /> <!-- Inner decorative elements -->
+     <g>
+      <path d="M0,-90 L15,-75 L0,-60 L-15,-75 Z" fill="none" stroke="#800020" stroke-width="0.5" />
+     </g>
+     <use href="#petalGroup" transform="rotate(45) scale(0.5)" />
+     <use href="#petalGroup" transform="rotate(135) scale(0.5)" />
+     <use href="#petalGroup" transform="rotate(225) scale(0.5)" />
+     <use href="#petalGroup" transform="rotate(315) scale(0.5)" />
+    </g>
+   </svg><!-- Content -->
+   <div class="relative z-10 p-10 pt-8"><!-- Header -->
+    <div class="text-center mb-6">
+     <div class="om-symbol font-devanagari mb-1">
+      ॐ
+     </div>
+     <div class="text-xs text-[#800020] font-devanagari mb-2">
+      ॥ श्री गणेशाय नमः ॥
+     </div>
+     <h1 class="text-3xl font-cormorant font-bold text-[#800020] tracking-wider" id="nameTitle">PRIYA SHARMA</h1>
+     <div class="flex items-center justify-center gap-3 mt-2">
+      <div class="h-px w-16 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div><span class="text-sm font-cormorant tracking-[0.3em] text-[#800020] font-semibold">BIODATA</span>
+      <div class="h-px w-16 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+     </div>
+    </div><!-- Main Content Grid -->
+    <div class="flex gap-8"><!-- Left Column - Details -->
+     <div class="flex-1 text-sm font-cormorant"><!-- Personal Details -->
+      <div class="mb-5">
+       <h2 class="section-heading text-[#800020] font-semibold text-base mb-3 tracking-wide">Personal Details</h2>
+       <div class="space-y-1">
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Name</span> <span class="text-[#333]" id="name">Priya Sharma</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Date of Birth</span> <span class="text-[#333]" id="dob">15th August 1996</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Time of Birth</span> <span class="text-[#333]" id="tob">10:30 AM</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Place of Birth</span> <span class="text-[#333]" id="pob">Jaipur, Rajasthan</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Rashi</span> <span class="text-[#333]" id="rashi">Simha (Leo)</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Nakshatra</span> <span class="text-[#333]" id="nakshatra">Magha</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Manglik</span> <span class="text-[#333]" id="manglik">No</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Religion</span> <span class="text-[#333]" id="religion">Hindu</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Caste</span> <span class="text-[#333]" id="caste">Brahmin</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Gotra</span> <span class="text-[#333]" id="gotra">Kashyap</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Family Type</span> <span class="text-[#333]" id="familyType">Nuclear</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Complexion</span> <span class="text-[#333]" id="complexion">Fair</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Blood Group</span> <span class="text-[#333]" id="bloodGroup">B+</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Height</span> <span class="text-[#333]" id="height">5'4" (163 cm)</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Education</span> <span class="text-[#333]" id="education">MBA Finance</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Occupation</span> <span class="text-[#333]" id="occupation">Financial Analyst</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Annual Income</span> <span class="text-[#333]" id="income">₹12 LPA</span>
+        </div>
+       </div>
+      </div><!-- Family Details -->
+      <div class="mb-5">
+       <h2 class="section-heading text-[#800020] font-semibold text-base mb-3 tracking-wide">Family Details</h2>
+       <div class="space-y-1">
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Father's Name</span> <span class="text-[#333]" id="father">Mr. Rajesh Sharma - Businessman</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Mother's Name</span> <span class="text-[#333]" id="mother">Mrs. Sunita Sharma - Homemaker</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Siblings</span> <span class="text-[#333]" id="siblings">1 Elder Brother (Married)</span>
+        </div>
+       </div>
+      </div><!-- Contact Details -->
+      <div>
+       <h2 class="section-heading text-[#800020] font-semibold text-base mb-3 tracking-wide">Contact Details</h2>
+       <div class="space-y-1">
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Phone</span> <span class="text-[#333]" id="phone">+91 98765 43210</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Email</span> <span class="text-[#333]" id="email">sharma.family@email.com</span>
+        </div>
+        <div class="detail-row"><span class="detail-label text-[#5C4033]">Address</span> <span class="text-[#333] leading-tight" id="address">123, Vaishali Nagar,<br>
+          Jaipur, Rajasthan - 302021</span>
+        </div>
+       </div>
+      </div>
+     </div><!-- Right Column - Photo -->
+     <div class="w-44 flex-shrink-0">
+      <div class="photo-frame">
+       <div class="photo-inner bg-gradient-to-br from-[#FDF8F0] to-[#E8DCC8] w-full aspect-[3/4] flex items-center justify-center">
+        <div class="text-center p-4">
+         <svg class="w-16 h-16 mx-auto text-[#800020] opacity-30 mb-2" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+         </svg><span class="text-xs text-[#800020] opacity-50 font-cormorant">Photo</span>
+        </div>
+       </div>
+      </div><!-- Decorative element below photo -->
+      <div class="mt-4 flex justify-center">
+       <svg width="120" height="30" viewbox="0 0 120 30" class="opacity-40"><path d="M0,15 Q30,0 60,15 Q90,30 120,15" fill="none" stroke="#800020" stroke-width="1" /> <path d="M0,15 Q30,30 60,15 Q90,0 120,15" fill="none" stroke="#800020" stroke-width="1" /> <circle cx="60" cy="15" r="4" fill="#D4AF37" /> <circle cx="30" cy="15" r="2" fill="#800020" /> <circle cx="90" cy="15" r="2" fill="#800020" />
+       </svg>
+      </div><!-- Partner Preferences (optional section) -->
+      <div class="mt-6 p-3 bg-white/50 border border-[#D4AF37]/30 rounded">
+       <h3 class="text-[#800020] font-cormorant font-semibold text-sm mb-2 text-center">Looking For</h3>
+       <p class="text-xs text-[#5C4033] font-cormorant leading-relaxed text-center">Well-educated, family-oriented person with good values and respectable background.</p>
+      </div>
+     </div>
+    </div><!-- Footer -->
+    <div class="absolute bottom-8 left-0 right-0 text-center">
+     <div class="flex items-center justify-center gap-2 text-[#800020] opacity-60">
+      <div class="h-px w-20 bg-gradient-to-r from-transparent to-[#800020]"></div>
+      <svg width="20" height="20" viewbox="0 0 20 20" class="opacity-70"><path d="M10,2 L12,8 L18,8 L13,12 L15,18 L10,14 L5,18 L7,12 L2,8 L8,8 Z" fill="#D4AF37" />
+      </svg>
+      <div class="h-px w-20 bg-gradient-to-l from-transparent to-[#800020]"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      candidate_name: 'Priya Sharma',
+      date_of_birth: '15th August 1996',
+      time_of_birth: '10:30 AM',
+      place_of_birth: 'Jaipur, Rajasthan',
+      rashi: 'Simha (Leo)',
+      nakshatra: 'Magha',
+      manglik: 'No',
+      religion: 'Hindu',
+      caste: 'Brahmin',
+      gotra: 'Kashyap',
+      family_type: 'Nuclear',
+      complexion: 'Fair',
+      blood_group: 'B+',
+      height: '5\'4" (163 cm)',
+      occupation: 'Financial Analyst',
+      annual_income: '₹12 LPA',
+      education: 'MBA Finance',
+      father_name: 'Mr. Rajesh Sharma - Businessman',
+      mother_name: 'Mrs. Sunita Sharma - Homemaker',
+      siblings: '1 Elder Brother (Married)',
+      phone: '+91 98765 43210',
+      email: 'sharma.family@email.com',
+      address: '123, Vaishali Nagar, Jaipur, Rajasthan - 302021',
+      primary_color: '#800020',
+      accent_color: '#D4AF37',
+      background_color: '#FDF8F0',
+      text_color: '#333333',
+      label_color: '#5C4033',
+      font_family: 'Cormorant Garamond',
+      font_size: 14
+    };
+
+    async function onConfigChange(config) {
+      // Update name title
+      const nameTitle = document.getElementById('nameTitle');
+      if (nameTitle) nameTitle.textContent = (config.candidate_name || defaultConfig.candidate_name).toUpperCase();
+      
+      // Update personal details
+      document.getElementById('name').textContent = config.candidate_name || defaultConfig.candidate_name;
+      document.getElementById('dob').textContent = config.date_of_birth || defaultConfig.date_of_birth;
+      document.getElementById('tob').textContent = config.time_of_birth || defaultConfig.time_of_birth;
+      document.getElementById('pob').textContent = config.place_of_birth || defaultConfig.place_of_birth;
+      document.getElementById('rashi').textContent = config.rashi || defaultConfig.rashi;
+      document.getElementById('nakshatra').textContent = config.nakshatra || defaultConfig.nakshatra;
+      document.getElementById('manglik').textContent = config.manglik || defaultConfig.manglik;
+      document.getElementById('religion').textContent = config.religion || defaultConfig.religion;
+      document.getElementById('caste').textContent = config.caste || defaultConfig.caste;
+      document.getElementById('gotra').textContent = config.gotra || defaultConfig.gotra;
+      document.getElementById('familyType').textContent = config.family_type || defaultConfig.family_type;
+      document.getElementById('complexion').textContent = config.complexion || defaultConfig.complexion;
+      document.getElementById('bloodGroup').textContent = config.blood_group || defaultConfig.blood_group;
+      document.getElementById('height').textContent = config.height || defaultConfig.height;
+      document.getElementById('education').textContent = config.education || defaultConfig.education;
+      document.getElementById('occupation').textContent = config.occupation || defaultConfig.occupation;
+      document.getElementById('income').textContent = config.annual_income || defaultConfig.annual_income;
+      
+      // Update family details
+      document.getElementById('father').textContent = config.father_name || defaultConfig.father_name;
+      document.getElementById('mother').textContent = config.mother_name || defaultConfig.mother_name;
+      document.getElementById('siblings').textContent = config.siblings || defaultConfig.siblings;
+      
+      // Update contact details
+      document.getElementById('phone').textContent = config.phone || defaultConfig.phone;
+      document.getElementById('email').textContent = config.email || defaultConfig.email;
+      
+      const address = config.address || defaultConfig.address;
+      document.getElementById('address').innerHTML = address.replace(/,\s*/g, ',<br/>');
+      
+      // Apply colors
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const labelColor = config.label_color || defaultConfig.label_color;
+      
+      document.documentElement.style.setProperty('--primary-color', primaryColor);
+      document.documentElement.style.setProperty('--accent-color', accentColor);
+      
+      // Update all text colors
+      document.querySelectorAll('.text-\\[\\#333\\]').forEach(el => {
+        el.style.color = textColor;
+      });
+      
+      document.querySelectorAll('.text-\\[\\#5C4033\\]').forEach(el => {
+        el.style.color = labelColor;
+      });
+      
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Georgia, serif';
+      document.querySelectorAll('.font-cormorant').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, ${baseFontStack}`;
+      });
+      
+      // Apply font size scaling
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.querySelectorAll('.detail-row').forEach(el => {
+        el.style.fontSize = `${baseSize}px`;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              config.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => config.label_color || defaultConfig.label_color,
+            set: (value) => {
+              config.label_color = value;
+              window.elementSdk.setConfig({ label_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['candidate_name', config.candidate_name || defaultConfig.candidate_name],
+        ['date_of_birth', config.date_of_birth || defaultConfig.date_of_birth],
+        ['time_of_birth', config.time_of_birth || defaultConfig.time_of_birth],
+        ['place_of_birth', config.place_of_birth || defaultConfig.place_of_birth],
+        ['rashi', config.rashi || defaultConfig.rashi],
+        ['nakshatra', config.nakshatra || defaultConfig.nakshatra],
+        ['manglik', config.manglik || defaultConfig.manglik],
+        ['religion', config.religion || defaultConfig.religion],
+        ['caste', config.caste || defaultConfig.caste],
+        ['gotra', config.gotra || defaultConfig.gotra],
+        ['family_type', config.family_type || defaultConfig.family_type],
+        ['complexion', config.complexion || defaultConfig.complexion],
+        ['blood_group', config.blood_group || defaultConfig.blood_group],
+        ['height', config.height || defaultConfig.height],
+        ['occupation', config.occupation || defaultConfig.occupation],
+        ['annual_income', config.annual_income || defaultConfig.annual_income],
+        ['education', config.education || defaultConfig.education],
+        ['father_name', config.father_name || defaultConfig.father_name],
+        ['mother_name', config.mother_name || defaultConfig.mother_name],
+        ['siblings', config.siblings || defaultConfig.siblings],
+        ['phone', config.phone || defaultConfig.phone],
+        ['email', config.email || defaultConfig.email],
+        ['address', config.address || defaultConfig.address]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d2633bfc70e7f8a',t:'MTc3MTg0NDI0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
